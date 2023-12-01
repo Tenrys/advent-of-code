@@ -10,9 +10,11 @@ const input = await readFile(join(__dirname, './input.txt'), 'utf8');
 // #region Part One
 const getPartOneAnswer = (input: string) => {
 	const lines = input.split('\n');
+
 	const lineNumbers = lines
 		.map((line) => (line.match(/\d/g) || []).map(Number))
 		.filter((numbers) => numbers.length && numbers.every(Number));
+
 	const sum = lineNumbers.reduce((acc, numbers) => {
 		const first = numbers[0];
 		const last = numbers[numbers.length - 1];
@@ -39,6 +41,7 @@ const numberStrings = {
 };
 const getPartTwoAnswer = (input: string) => {
 	const lines = input.split('\n');
+
 	const lineNumbers = lines
 		.map((line) => {
 			const numberMatches = [];
