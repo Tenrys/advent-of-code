@@ -18,7 +18,7 @@ const getPartOneAnswer = (input: string) => {
 	const sum = lineNumbers.reduce((acc, numbers) => {
 		const first = numbers[0];
 		const last = numbers[numbers.length - 1];
-		acc += Number(`${first}${last}`);
+		acc += Number([first, last].join(''));
 		return acc;
 	}, 0);
 
@@ -60,10 +60,10 @@ const getPartTwoAnswer = (input: string) => {
 		})
 		.filter((numbers) => numbers.length && numbers.every(Number));
 
-	const sum = lineNumbers.reduce((acc, numbers, i) => {
+	const sum = lineNumbers.reduce((acc, numbers) => {
 		const first = numbers[0];
 		const last = numbers[numbers.length - 1];
-		acc += Number(`${first}${last}`);
+		acc += Number([first, last].join(''));
 		return acc;
 	}, 0);
 
@@ -71,4 +71,3 @@ const getPartTwoAnswer = (input: string) => {
 };
 console.log('Part 2 answer:', getPartTwoAnswer(input));
 // #endregion
-
