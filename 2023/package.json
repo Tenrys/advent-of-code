@@ -1,0 +1,17 @@
+{
+  "name": "advent-of-code-2023",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bell",
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^20.10.1",
+    "tsx": "^4.6.1",
+    "typescript": "^5.3.2"
+  }
+}
