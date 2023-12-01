@@ -42,6 +42,7 @@ const getPartTwoAnswer = (input: string) => {
 	const lineNumbers = lines
 		.map((line) => {
 			const numberMatches = [];
+			numberMatches.push(...Array.from(line.matchAll(/\d/g)));
 			for (const numberString in numberStrings) {
 				const _matches = Array.from(line.matchAll(new RegExp(numberString, 'g')));
 				for (const match of _matches) {
@@ -49,7 +50,6 @@ const getPartTwoAnswer = (input: string) => {
 					numberMatches.push(match);
 				}
 			}
-			numberMatches.push(...Array.from(line.matchAll(/\d/g)));
 			return numberMatches
 				.filter((x): x is typeof x & { index: number } => x.index != null)
 				.toSorted((a, b) => (a.index > b.index ? 1 : -1))
