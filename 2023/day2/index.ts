@@ -34,7 +34,7 @@ const getPartOneAnswer = (input: string) => {
 			}
 		}
 		// We've reached this far into the loop and haven't moved on, game is possible.
-		const [, gameId] = gameName.split(' ')
+		const [, gameId] = gameName.split(' ');
 		possible.push(Number(gameId));
 	}
 
@@ -45,7 +45,6 @@ const getPartOneAnswer = (input: string) => {
 };
 console.log('Part 1 answer:', getPartOneAnswer(input));
 // #endregion
-
 
 // #region Part Two
 const getPartTwoAnswer = (input: string) => {
@@ -59,7 +58,7 @@ const getPartTwoAnswer = (input: string) => {
 			red: 0,
 			green: 0,
 			blue: 0,
-		}
+		};
 
 		const [, cubeSetsStr] = game.split(':');
 		const cubeSets = cubeSetsStr.trim().split(';');
@@ -75,11 +74,13 @@ const getPartTwoAnswer = (input: string) => {
 			}
 		}
 
-		const mins = Object.values(minColorAmounts)
-		powers.push(mins.slice(1).reduce((acc, min) => {
-			acc *= min
-			return acc
-		}, mins[0]))
+		const mins = Object.values(minColorAmounts);
+		powers.push(
+			mins.slice(1).reduce((acc, min) => {
+				acc *= min;
+				return acc;
+			}, mins[0])
+		);
 	}
 
 	return powers.reduce((acc, power) => {
