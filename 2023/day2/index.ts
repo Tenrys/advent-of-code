@@ -19,6 +19,7 @@ const getPartOneAnswer = (input: string) => {
 
 	mainLoop: for (const game of games) {
 		if (!game.trim().length) continue;
+
 		const [gameName, cubeSetsStr] = game.split(':');
 		const cubeSets = cubeSetsStr.trim().split(';');
 		for (const cubeSet of cubeSets) {
@@ -27,12 +28,14 @@ const getPartOneAnswer = (input: string) => {
 				coloredCubes.split(' ')
 			) as Array<[string, keyof typeof maxColorAmounts]>) {
 				const amount = Number(amountStr);
+
 				if (amount > maxColorAmounts[color]) {
 					// Impossible game, we move on.
 					continue mainLoop;
 				}
 			}
 		}
+
 		// We've reached this far into the loop and haven't moved on, game is possible.
 		const [, gameId] = gameName.split(' ');
 		possible.push(Number(gameId));
@@ -59,7 +62,6 @@ const getPartTwoAnswer = (input: string) => {
 			green: 0,
 			blue: 0,
 		};
-
 		const [, cubeSetsStr] = game.split(':');
 		const cubeSets = cubeSetsStr.trim().split(';');
 		for (const cubeSet of cubeSets) {
@@ -68,6 +70,7 @@ const getPartTwoAnswer = (input: string) => {
 				coloredCubes.split(' ')
 			) as Array<[string, keyof typeof maxColorAmounts]>) {
 				const amount = Number(amountStr);
+
 				if (amount > minColorAmounts[color]) {
 					minColorAmounts[color] = amount;
 				}
