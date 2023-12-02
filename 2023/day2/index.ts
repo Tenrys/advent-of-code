@@ -68,7 +68,7 @@ const getPartTwoAnswer = (input: string) => {
 			const cubes = cubeSet.split(',').map((x) => x.trim());
 			for (const [amountStr, color] of cubes.map((coloredCubes) =>
 				coloredCubes.split(' ')
-			) as Array<[string, keyof typeof maxColorAmounts]>) {
+			) as Array<[string, keyof typeof minColorAmounts]>) {
 				const amount = Number(amountStr);
 
 				if (amount > minColorAmounts[color]) {
