@@ -41,10 +41,7 @@ const getPartOneAnswer = (input: string) => {
 		possible.push(Number(gameId));
 	}
 
-	return possible.reduce((acc, id) => {
-		acc += id;
-		return acc;
-	}, 0);
+	return possible.reduce((acc, id) => (acc += id), 0);
 };
 console.log('Part 1 answer:', getPartOneAnswer(input));
 // #endregion
@@ -86,10 +83,7 @@ const getPartTwoAnswer = (input: string) => {
 		);
 	}
 
-	return powers.reduce((acc, power) => {
-		acc += power;
-		return acc;
-	}, 0);
+	return powers.reduce((acc, power) => (acc += power), 0);
 };
 console.log('Part 2 answer:', getPartTwoAnswer(input));
 // #endregion
