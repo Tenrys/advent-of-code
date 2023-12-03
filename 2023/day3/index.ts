@@ -43,7 +43,6 @@ console.log('Part 1 answer:', getPartOneAnswer(input));
 // #endregion
 
 // #region Part Two
-
 // I can't help but feel that this could be way more elegant...
 const getPartTwoAnswer = (input: string) => {
 	const gearCombinations: Array<number[]> = [];
